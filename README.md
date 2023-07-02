@@ -1,8 +1,8 @@
 # recipe-app
 
-recipe app made with React
-styled with tailwindcss
-API used for seacrhing recipes 
+recipe app made with React <br>
+styled with tailwindcss <br>
+Recipe API used for seacrhing recipes 
 
 ### how to run
 1.clone the repository to your local working environment
