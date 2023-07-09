@@ -1,4 +1,6 @@
+import { useEffect } from 'react';
 import Home from './home';
+
 
 function App(){
 
