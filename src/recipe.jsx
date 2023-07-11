@@ -1,7 +1,7 @@
 import chicken from './assets/TandooriChicken.jpg';
 
 
-function Recipe({setShowRecipe,prop}){
+function Recipe({setShowRecipe,meal}){
 
   
     return(
@@ -16,7 +16,7 @@ function Recipe({setShowRecipe,prop}){
                 </div>
             
                 <article>
-                    <h1 className="text-black text-[32px] underline font-bold">{prop.meal.recipe.label}</h1>
+                    <h1 className="text-black text-[32px] underline font-bold">{meal.recipe.label}</h1>
                     <h3 className="text-black text-[20px] font-bold">Ingredients</h3>
                     <ul className="list-disc px-[20px]">
                         <li  className="text-black text-[16px] font-bold">6 Chicken leg</li>
