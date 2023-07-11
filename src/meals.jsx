@@ -24,10 +24,10 @@ function Meals({recipes}){
 
                         </div>
                     </div>
+                    
                 ))}
 
-                {showRecipe ? <Recipe setShowRecipe={setShowRecipe} meal={recipes}/>: ""}  
-                
+                {showRecipe ? <Recipe setShowRecipe={setShowRecipe}/>: ""} 
             </article>
         </>
     )
