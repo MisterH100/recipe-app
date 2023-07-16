@@ -8,17 +8,18 @@ function Search(){
     const apiId = "5a0154a0"
     const apiKey = "bed919734efaca6e102267f80e6b2a0d"
     const url =`https://api.edamam.com/api/recipes/v2?type=any&q=${query}&app_id=${apiId}&app_key=${apiKey}`
-    const randomUrl =`https://api.edamam.com/api/recipes/v2?type=any&q=chicken&app_id=${apiId}&app_key=${apiKey}`
+    const randomUrl =`https://api.edamam.com/api/recipes/v2?type=any&q=sushi&app_id=${apiId}&app_key=${apiKey}`
 
     function searchResults(e){
         setQuery(e.target.value)
+
         fetch(url)
-          .then(response => {
-            return response.json()
-          })
-          .then(data => {
-            setRecipes(data.hits)
-        })
+            .then(response => {
+                return response.json()
+            })
+            .then(data => {
+                setRecipes(data.hits)
+            })
     
     }
 
@@ -42,7 +43,7 @@ function Search(){
     },[])
  
     return(
-        <div>
+        <div className="bg-[#242424]">
             <form className="w-full  mt-[34px]" onSubmit={handleSubmit}>
                 <div className="flex justify-center gap-[10px] flex-wrap items-center">
                     <input 

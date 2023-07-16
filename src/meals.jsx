@@ -1,14 +1,21 @@
-import {useState} from "react";
+import { useState } from "react";
 import Recipe from "./recipe";
 
 function Meals({recipes}){
-    const[showRecipe, setShowRecipe] = useState(false)
+    const [showRecipe, setShowRecipe] = useState(false)
+    const [modalData, setModalData] = useState()
+    const data = recipes.recipe
+
+    const showModal = (e)=> {
+        setShowRecipe(true)
+        setModalData(data.label)
+    }
 
     return(
         <>
-            <article className="w-full flex justify-center flex-wrap gap-[40px] m-auto mt-[34px] px-[10px]">
+            <article className="w-full flex justify-center flex-wrap gap-[40px] m-auto mt-[34px] px-[10px] bg-[#242424]">
                 {recipes.map((meal,index) =>(
-                    <div key={index} className="w-[300px] h-[400px]  cursor-pointer " onClick={()=> setShowRecipe(true)}>
+                    <div key={index} className="w-[300px] h-[400px]  cursor-pointer " onClick={showModal}>
                         <div className="card-image w-full h-[250px] overflow-hidden">
                             <img 
                                 className="w-full h-full object-cover"
@@ -26,10 +33,9 @@ function Meals({recipes}){
                     </div>
                     
                 ))}
-
-                {showRecipe ? <Recipe setShowRecipe={setShowRecipe}/>: ""} 
             </article>
-        </>
+            {showRecipe ? <Recipe setShowRecipe={setShowRecipe} modalData={modalData} />: null} 
+        </> 
     )
 }
 
